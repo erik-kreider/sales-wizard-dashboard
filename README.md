@@ -1,30 +1,55 @@
-# ADS-Final-Project
-All material for the DSCI-590: ADS Final Project
+# Healthcare SalesWizard Dashboard
 
-1. Name:  Healthcare Sales Wizard
-2. Team Members: Owen Randolph, Erik Kreider, Ian Boen
-3. Description: The reason these topics interest us is that they can be used to help managers make wise decisions about how to direct a company sector.  Business is a very competitive field, so data-driven decisions are a key to success. Healthcare sales is a particularly interesting domain because there are so many unique variables that come into play when making sales decisions.
-The user-facing feature of our project will be a dashboard that can be adjusted and give outputs based on features selected.  Our project will be comprised of four ML and visualization features.  The following shows the modules, their importance to the user, and the machine learning model used to give output data:
+## Datasets
+- **`healthcare_sales_dataset`**: For use in the Product Pricing, Bundling, and Territory Optimization modules.
+- **`leadscore_dataset`**: For use in the Lead Scoring module.
 
-•	Sales Lead Scoring and Prioritization
-  -	Help sales managers and sales reps prioritize and manage their leads to determine which to tackle when, which are most likely to convert, adjust marketing strategy, etc.
-  -	Model: Gradient Boosting (High, Medium, Low Priority)
-    
-•	Sales Territory Optimization
-  - Determine the maximum sales potential by territory.  Which cities and regions are more likely to buy certain
-  -	Model: Random Forest
-    
-•	Product Bundling
-  - Determine which products are often ordered together and can more likely be sold together, perhaps in reduced price “bundles”, or for supply chain/logistic purposes
-  -	Model: Clustering using product similarities
-    
-•	Product Pricing
-  -	Used for pricing decision-making based on past sales, regions, times, and other factors
-  -	Model: Random Forest model to determine adequate pricing utilizing product, company size, average cost to implement, etc., maybe and maybe multivariate regression
+## Application File
+- **`app.py`**: The Streamlit executable file for running the application.
 
-Web Application Platform: Streamlit.  We are interested in using this library due to simple and lightweight nature, it’s fast prototyping capabilities, and we will be using static data.
+---
 
-Programming language: Python. As the whole team is more comfortable using Python than R, we will by writing our code using Python.  We will be utilizing scikit-learn for building the ML models
+## Project Report
 
-Datasets: We have two primary datasets that we will be using to create our models: One for sales leads and one for Sales Territory optimization, product bundling and product pricing.  These are synthetic datasets created using Python code with randomization features and realistic pattern features added to them.
-Other processes we will undertake are data cleaning, data manipulation, and exploratory data analysis methods.
+### Purpose & Audience
+The Healthcare SalesWizard Dashboard is designed to assist healthcare sales managers and representatives in making data-driven decisions that optimize their sales strategies. The key audiences include:
+
+- **Sales Managers**: Tools for prioritizing leads and optimizing sales territories.
+- **Sales Representatives**: Insights to enhance selling techniques and improve conversion rates.
+- **Product Managers**: Understanding market dynamics to optimize product bundling and pricing.
+
+This application leverages machine learning models and data visualizations to streamline decision-making in the competitive healthcare market, where identifying unique variables is essential for profitable insights.
+
+---
+
+### App Architecture
+The application is built using a modular architecture that ensures scalability and flexibility:
+
+- **Frontend**: Built with Streamlit to provide an intuitive interface for data visualization and interaction.
+- **Backend**: Developed using Python, utilizing libraries such as `scikit-learn` and `apriori` for machine learning model implementation.
+- **Data Handling**: Uses synthetic and real-world datasets, including data cleaning, manipulation, and exploratory data analysis (EDA).
+
+This architecture integrates multiple machine learning models, offering diverse functionalities while maintaining ease of use for end-users.
+
+---
+
+### Functionalities
+The Healthcare SalesWizard Dashboard includes four primary functionalities:
+
+1. **Sales Lead Scoring and Prioritization**
+   - Utilizes an ensemble of machine learning classifiers in a pipeline.
+   - Selects the best model to categorize leads into high, medium, or low priority.
+   - Helps sales teams focus on the most promising opportunities.
+
+2. **Sales Territory Optimization**
+   - Clusters regions by growth potential using KNN (high or low growth).
+   - Reduces dimensionality with PCA to four components explaining 95% of the variance.
+   - Predicts growth categories using Random Forest models.
+
+3. **Product Bundling**
+   - Implements the Apriori algorithm to identify frequently purchased product combinations.
+   - Enables strategic bundling for promotions or logistical improvements.
+
+4. **Product Pricing**
+   - Employs models such as XGBoost, Random Forest, and Linear Regression.
+   - Provides pricing recommendations based on historical sales data, region, and customer size.
