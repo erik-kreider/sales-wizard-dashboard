@@ -6,6 +6,7 @@
 
 ## Application File
 - **`app.py`**: The Streamlit executable file for running the application.
+- **`streamlit application`**: https://sales-wizard-dashboard.streamlit.app/
 
 ---
 
